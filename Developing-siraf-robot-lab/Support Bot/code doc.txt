@@ -1,0 +1,18 @@
+Class: Marketing
+
+This class handles the creation of marketing files and generates various statistics and reports based on the provided data.
+Method: __init__(self, hedayat_tarakonesh_path, last_month_marketing_path, terminal_worked_path)
+
+The constructor method initializes the Marketing object with paths to the required files: hedayat_tarakonesh_path for Hedayat Tarakonesh data, last_month_marketing_path for the last month's marketing file, and terminal_worked_path for terminal worked data.
+Method: create_last_month_marketing(self)
+
+This method reads the last month's marketing file, inserts the "تاریخ" (date) column with the last month's date, and returns the modified dataframe.
+Method: create_marketing_sheet1(self, last_month_marketing)
+
+This method reads the terminal worked file and creates the base marketing dataframe. It merges the last month's marketing data with the terminal worked data. Additional columns such as "فروش و غیر فروش", "ماه بعد", and "مبلغ فرمول" are added based on certain conditions and calculations. The resulting dataframe is saved as an Excel file named "marketing_sheet1.xlsx" and returned.
+Method: create_marketing_main_data(marketing_sheet1)
+
+This static method reads the marketing file sheet1 and calculates various statistics for the current month's sales and non-sales data. The calculated data is stored in a dataframe and saved as an Excel file named "marketing_main_data.xlsx". The dataframe is returned.
+Method: start(self)
+
+This method serves as the entry point for executing the marketing processing tasks. It prompts the user to create the last month's marketing file if not already available. It then calls the create_last_month_marketing, create_marketing_sheet1, and create_marketing_main_data methods to generate the required files and statistics. Finally, it returns the resulting marketing dataframe.

@@ -1,0 +1,21 @@
+Function: check_for_penalty_at_all(dataframe)
+
+This function checks if specific conditions are met in the given dataframe and marks rows that should not incur a penalty by setting the "dont penalty" column to True. The function returns the modified dataframe.
+Function: check_is_in_time_range(start_time, target_time, end_time)
+
+This function checks if a target_time falls within the time range specified by start_time and end_time. It handles cases where start_time is greater than end_time. The function returns True if the target_time is within the specified range, otherwise False.
+Function: it_older_than_sixty(tarikh_nasb)
+
+This function checks if a given tarikh_nasb (installation date) is older than sixty days ago. It uses the check_is_in_time_range function to determine if the installation date falls within the specified time range. The function returns True if the installation date is older than sixty days, otherwise False.
+Function: installation_date_calc(date)
+
+This function converts the provided date string into a datetime.date object using the format "%Y_%m_%d". The resulting date object is returned.
+Function: document_difference(dataframe)
+
+This function marks rows in the dataframe where the "it's in range" column is True and the "مغایرت" column is True by setting the "document difference penalty" column to 15000. The modified dataframe is returned.
+Function: calculate_zero_em_pm(dataframe)
+
+This function identifies rows in the dataframe where both the "pm" and "em" columns are False and sets the "calculate_pm_em" column to 25000. The updated dataframe is returned.
+Function: installation_date_calc_month(date)
+
+This function converts the provided date string into a datetime.date object using the format

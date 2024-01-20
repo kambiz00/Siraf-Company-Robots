@@ -1,0 +1,20 @@
+This script that performs various data analysis tasks using the pandas library and Openpyxl for working with Excel files. Here's a breakdown of the script's structure and functionality:
+
+    The script imports several libraries and modules required for data analysis, Excel file handling, logging, and configuration.
+
+    It defines a class called "Transaction" that represents a transaction object. The class has several methods for reading Excel files, creating dataframes, inserting values into dataframes, performing calculations, and more.
+
+    The class has the following properties:
+        one_third_one_excel_file: Reads an Excel file (specified by one_third_one_path) and returns a pandas dataframe.
+        zero_transaction_excel_file: Reads an Excel file (specified by terminal_work_path) and returns a pandas dataframe.
+        cumulative_excel_file: Reads an Excel file (specified by cumulative_terminal) and returns a pandas dataframe.
+
+    The class has several methods for manipulating dataframes and performing calculations:
+        creating_zero_terminals: Creates a new dataframe for zero terminals.
+        inserting_1_31_file: Creates a column of the main dataframe based on the data from the 1st to the 31st of the month.
+        inserting_values_part1: Inserts data from zero_terminals and one_third_one_df into the main dataframe, replacing NaN values with 0.
+        vlookup_and_inserting_to_main_df: Inserts data from the cumulative dataframe into the main dataframe using VLOOKUP.
+        calculate_formula_values_part1: Calculates several formula values based on the data in the main dataframe.
+        calculate_formula_values_part2_and_part3: Applies the vres function to the "تعداد تراکنش" column, filters the dataframe, calculates counts and sums, and adds them to the main dataframe.
+
+    Finally, the script defines a function hedayat_trarakonesh_main that takes a parameter sheet_1 and performs some operations on it. The details of this function are not provided in the code snippet you provided.
